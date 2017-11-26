@@ -3,14 +3,12 @@ export class Course {
   public instructorName: string;
   public description: string;
   public imagePath: string;
-  public videoPath: string;
 
-  constructor(courseName: string, instructorName: string, desc: string, imagePath: string, videoPath: string) {
+  constructor(courseName: string, instructorName: string, desc: string, imagePath: string) {
     this.courseName = courseName;
     this.instructorName = instructorName;
     this.description = desc;
     this.imagePath = imagePath;
-    this.videoPath = videoPath;
   }
 
 }

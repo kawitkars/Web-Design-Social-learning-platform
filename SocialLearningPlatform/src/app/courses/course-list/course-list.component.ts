@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+
 import {Course} from '../course.model';
+
+
+import {CourseService} from '../course.service';
+
+
+
 
 @Component({
   selector: 'app-course-list',
@@ -7,16 +15,21 @@ import {Course} from '../course.model';
   styleUrls: ['./course-list.component.css']
 })
 export class CourseListComponent implements OnInit {
-  courses: Course[] = [
-    new Course('Web Design', 'Prof Anish', 'This is simply a test course', 'https://upload.wikimedia.org/' +
-      'wikipedia/commons/thumb/1/10/' +
-      'CSS3_and_HTML5_logos_and_wordmarks.svg/1280px-CSS3_and_HTML5_logos_and_wordmarks.svg.png',
-      'https://youtu.be/LO_xGTfCfSs')
-  ];
 
-  constructor() { }
+
+  private courses: Course[];
+
+  constructor(private courseService: CourseService,
+              private router: Router,
+              private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+      this.courses = this.courseService.getCourses();
+  }
+
+  onNewCourse() {
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
 }

@@ -8,6 +8,11 @@ import { CoursesComponent } from './courses/courses.component';
 import { CourseListComponent } from './courses/course-list/course-list.component';
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { CourseItemComponent } from './courses/course-list/course-item/course-item.component';
+import {DropdownDirective} from './Shared/dropdown.directive';
+import {FormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app-routing.module';
+import { CourseStartComponent } from './courses/course-start/course-start.component';
+import { CourseEditComponent } from './courses/course-edit/course-edit.component';
 
 
 @NgModule({
@@ -17,10 +22,15 @@ import { CourseItemComponent } from './courses/course-list/course-item/course-it
     CoursesComponent,
     CourseListComponent,
     CourseDetailComponent,
-    CourseItemComponent
+    CourseItemComponent,
+    DropdownDirective,
+    CourseStartComponent,
+    CourseEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

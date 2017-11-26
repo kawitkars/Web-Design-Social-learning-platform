@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {Course} from '../../course.model';
+
+
+
 
 @Component({
   selector: 'app-course-item',
@@ -7,7 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() course: Course;
+  @Input() index: number;
+
+
 
   ngOnInit() {
   }
