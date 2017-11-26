@@ -1,9 +1,12 @@
-
+import {Subject} from 'rxjs/Subject';
 import {Course} from './course.model';
 
 
 
+
 export class CourseService {
+
+  coursesChanged = new Subject<Course[]>();
 
   private courses: Course[] = [
     new Course('Web Design', 'Prof Anish', 'This is simply a test course', 'https://upload.wikimedia.org/' +
@@ -23,6 +26,21 @@ export class CourseService {
 
   getCourse(index: number) {
     return this.courses[index];
+  }
+
+  addCourse(course: Course) {
+    this.courses.push(course);
+    this.coursesChanged.next(this.courses.slice());
+  }
+
+  updateCourse(index: number, newCourse: Course) {
+    this.courses[index] = newCourse;
+    this.coursesChanged.next(this.courses.slice());
+  }
+
+  deleteCourse(index: number) {
+    this.courses.splice(index, 1);
+    this.coursesChanged.next(this.courses.slice());
   }
 
 }

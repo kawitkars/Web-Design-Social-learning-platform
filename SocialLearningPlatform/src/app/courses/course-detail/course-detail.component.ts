@@ -32,4 +32,9 @@ export class CourseDetailComponent implements OnInit {
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
+  onDeleteCourse() {
+    this.courseService.deleteCourse(this.id);
+    this.router.navigate(['/courses']);
+  }
+
 }

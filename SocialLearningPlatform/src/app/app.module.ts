@@ -9,10 +9,11 @@ import { CourseListComponent } from './courses/course-list/course-list.component
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { CourseItemComponent } from './courses/course-list/course-item/course-item.component';
 import {DropdownDirective} from './Shared/dropdown.directive';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import { CourseStartComponent } from './courses/course-start/course-start.component';
 import { CourseEditComponent } from './courses/course-edit/course-edit.component';
+import {CourseService} from './courses/course.service';
 
 
 @NgModule({
@@ -30,9 +31,10 @@ import { CourseEditComponent } from './courses/course-edit/course-edit.component
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

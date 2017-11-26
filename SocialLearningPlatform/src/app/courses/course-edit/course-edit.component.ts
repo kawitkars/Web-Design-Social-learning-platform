@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
-import {FormControl, FormGroup} from '@angular/forms';
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CourseService} from '../course.service';
+
+
 
 @Component({
   selector: 'app-course-edit',
@@ -13,7 +15,9 @@ export class CourseEditComponent implements OnInit {
   editMode = false;
   courseForm: FormGroup;
 
-  constructor(private route: ActivatedRoute, private courseService: CourseService) { }
+  constructor(private route: ActivatedRoute,
+              private courseService: CourseService,
+              private router: Router) { }
 
   ngOnInit() {
     this.route.params
@@ -24,6 +28,23 @@ export class CourseEditComponent implements OnInit {
           this.initForm();
         }
       );
+  }
+
+  onSubmit() {
+    /*const newCourse = new Course(this.courseForm.value['courseName'],
+      this.courseForm.value['imagePath'],
+      this.courseForm.value['instructorName'],
+      this.courseForm.value['description']);*/
+    if (this.editMode) {
+      this.courseService.updateCourse(this.id, this.courseForm.value);
+    } else {
+      this.courseService.addCourse(this.courseForm.value);
+    }
+    this.onCancel();
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
   private initForm() {
@@ -43,10 +64,10 @@ export class CourseEditComponent implements OnInit {
     }
 
     this.courseForm = new FormGroup({
-      'name': new FormControl(courseName),
-      'imagePath': new FormControl(courseImagePath),
-      'instructorName': new FormControl(courseInstructorName),
-      'description': new FormControl(courseDescription)
+      'courseName': new FormControl(courseName, Validators.required),
+      'imagePath': new FormControl(courseImagePath, Validators.required),
+      'instructorName': new FormControl(courseInstructorName, Validators.required),
+      'description': new FormControl(courseDescription, Validators.required)
     });
   }
 

@@ -1,10 +1,12 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="col-xs-12">
-          <button type="submit" class="btn btn-success">Save</button>
-          <button type="button" class="btn btn-danger">Cancel</button>
+          <button type="submit"
+                  class="btn btn-success"
+                  [disabled]="!courseForm.valid">Save</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
         </div>
       </div>
       <div class="row">
@@ -14,6 +16,7 @@
             <input
               type="text"
               id="courseName"
+              formControlName="courseName"
               class="form-control">
           </div>
         </div>
@@ -25,6 +28,7 @@
             <input
               type="text"
               id="instructorName"
+              formControlName="instructorName"
               class="form-control">
           </div>
         </div>
@@ -36,13 +40,15 @@
             <input
               type="text"
               id="imagePath"
-              class="form-control">
+              formControlName="imagePath"
+              class="form-control"
+              #imagePath>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <img src="" class="img-responsive">
+          <img [src]="imagePath.value" class="img-responsive">
         </div>
       </div>
       <div class="row">
@@ -53,6 +59,7 @@
               type="text"
               id="description"
               class="form-control"
+              formControlName="description"
               rows="6"></textarea>
           </div>
         </div>
