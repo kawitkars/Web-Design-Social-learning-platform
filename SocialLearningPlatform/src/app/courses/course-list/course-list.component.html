@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New Course</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a href="#"
+       class="list-group-item clearfix"
+       *ngFor="let course of courses">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{course.courseName}}</h4>
+        <h5 class="list-group-item-text">{{course.instructorName}}</h5>
+        <p class="list-group-item-text">{{course.description}}</p>
+      </div>
+      <span class="pull-right">
+        <img [src]="course.imagePath"
+             alt="{{course.courseName}}"
+             class="img-responsive"
+             style="max-height: 50px;">
+      </span>
+    </a>
+    <app-course-item></app-course-item>
+  </div>
+</div>
+
