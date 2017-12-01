@@ -95,3 +95,8 @@
   padding: 10% 20px;
   background-color: #30303078;
 }
+
+.carousel-control.left{background-image: none}
+.carousel-control.right{background-image: none}
+
+/*carousel > .carousel{background-color: #00000061;padding: 10px;}*/

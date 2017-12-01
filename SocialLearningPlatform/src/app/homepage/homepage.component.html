@@ -14,7 +14,9 @@
       </div>
     </div>
 </div>
-<div class="container">
+
+
+<div class="container" style="margin-bottom: 30px">
   <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
     <h2 class="how-it-work-heading">How it works</h2>
     <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">
@@ -35,16 +37,18 @@
   </div>
 </div>
 
-<div [ngStyle]="{'background-image': 'url(' + photo_1 + ')'}">
+
+<div class="bgstyle-first" [ngStyle]="{'background-image': 'url(' + photo_1 + ')'}">
   <div class="container-fluid padding-0">
-    <div class="col-md-6 col-md-offset-3 col-xs-12 col-sm-12 col-lg-6 col-lg-offset-3 padding-0" >
-      <h2 class="how-it-work-heading">Testimonials</h2>
-      <carousel>
+    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+    <div class="col-md-10 col-md-offset-1 col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 padding-0" style="background-color: #00000061;padding: 30px 20px;margin-top: 50px;margin-bottom: 50px;">
+      <h2 class="how-it-work-heading" style="color:#fff;margin: 0px 0px 20px;">Testimonials</h2>
+      <carousel class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
         <slide>
           <div class="carousel-caption text-center">
-            <img src="assets/image/search.jpeg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <img _ngcontent-c1="" alt="Responsive image" class="img-circle img-responsive center-block" src="assets/image/search.jpeg" style="width: 100px;height: 100px;">
+            <p _ngcontent-c1="" class="hiw-heading" style="text-align: center;color: #fff;">2. Go through all Materials</p>
+            <p _ngcontent-c1="" class="hiw-subheading" style="text-align: center;color: #fff;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
           </div>
         </slide>
         <slide>
@@ -62,8 +66,19 @@
           </div>
         </slide>
       </carousel>
+    </div>
+    </div>
+  </div>
+</div>
 
-
+<div class="container-fluid text-center" style="padding:30px 15px">
+  <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+    <span class="footer_link pull-left">&copy; Social Leaning Platform</span>
+    <div class="pull-right">
+      <span class="footer_link">Home</span>
+      <span class="footer_link">Blogs</span>
+      <span class="footer_link">Videos</span>
+      <span class="footer_link">Instructors</span>
     </div>
   </div>
 </div>

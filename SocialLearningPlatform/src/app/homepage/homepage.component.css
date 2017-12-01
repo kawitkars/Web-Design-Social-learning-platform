@@ -6,3 +6,5 @@ color:#787976}
 .how-it-work-heading{font-size: 25px; text-align: center; padding: 10px 15px; color: #6ca4e8;}
 .hiw-subheading{
   color: #808080;}
+.item{min-height: 250px !important;}
+.footer_link{padding: 0px 10px;color: #787976;font-weight:600;}
