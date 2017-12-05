@@ -4,6 +4,7 @@ angular.module('linkControllers',[])
     var app = this;
     this.regUser = function(){
         $http.get('/api/links',this.regData).then(function(data){
+            console.log(data);
             var length = data.data.length;
            for(i=0;i<length;i++){
                if(data.data[i].contentType=="video"){
@@ -11,7 +12,7 @@ angular.module('linkControllers',[])
                    app.author = data.data[i].author;
                    app.contentType = data.data[i].contentType;
                    app.url = data.data[i].url;
-
+            
                    
                }
            }

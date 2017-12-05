@@ -31,7 +31,7 @@ let LinkSchema = new Schema({
     },
 
     url:{
-        type:URL,
+        type:String,
         required:true,
         index:{unique:true}
     }

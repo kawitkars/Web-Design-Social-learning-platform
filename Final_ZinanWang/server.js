@@ -3,7 +3,7 @@ app = express(),
 port = process.env.PORT || 3000,
 mongoose = require('mongoose'), //created model loading here
 bodyParser = require('body-parser');
-
+const path = require('path');
 
 
 // mongoose instance connection url connection
@@ -21,6 +21,16 @@ app.use(bodyParser.urlencoded({
 extended: true
 }));
 
+// app.use(express.static(__dirname + '/SocialLearningPlatform/dist'));
+
+
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+    next();
+});
+
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
@@ -31,6 +41,10 @@ app.use('/api',api);
 app.get('*',function(req,res){
     res.sendFile(__dirname + '/public/app/views/index.html');
 });
+
+// app.get('*',function(req,res){
+//     res.sendFile(path.join(__dirname + '/SocailLearningPlatform/dist/index.html'));
+// });
 
 app.listen(port);
 console.log('Stickies RESTful API server started on: ' + port);
