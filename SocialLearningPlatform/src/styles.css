@@ -57,10 +57,10 @@
   text-align: left;
   list-style: none;
   background-clip: padding-box;
-  background-color: #e5e5e5;
+  background-color: #f3f3f3;
+  border: none !important;
   border-radius: 0px;
   box-shadow: none;
-  border:none;
 }
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
@@ -99,4 +99,3 @@
 .carousel-control.left{background-image: none}
 .carousel-control.right{background-image: none}
 
-/*carousel > .carousel{background-color: #00000061;padding: 10px;}*/

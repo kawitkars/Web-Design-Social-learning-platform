@@ -11,6 +11,7 @@ import { CourseListComponent } from './courses/course-list/course-list.component
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { CourseItemComponent } from './courses/course-list/course-item/course-item.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     CourseListComponent,
     CourseDetailComponent,
     CourseItemComponent,
-    HomepageComponent
+    HomepageComponent,
+    SearchResultComponent
   ],
   imports: [
     BsDropdownModule.forRoot(),
