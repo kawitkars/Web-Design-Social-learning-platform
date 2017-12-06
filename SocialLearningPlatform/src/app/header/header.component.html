@@ -34,7 +34,7 @@
             <li><a href="#">Login with <span class="facebook_btn"><i aria-hidden="true" class="fa fa-facebook-official"></i> Facebook</span></a></li>
           </ul>
         </li>
-        <li><a href="#">Sign Up</a></li>
+        <li><a href="#" (click)="openModal(template)">Sign Up</a></li>
 
         <li class="dropdown xs_sm_visible loginuserdropdown" style="min-height: 50px;" dropdown >
           <a dropdownToggle href="javascript:void(0)" class="dropdown-toggle" style="padding: 3px 15px 2px 7px !important;" role="button" data-toggle="dropdown" id="user_info" aria-haspopup="true" aria-expanded="false">
@@ -55,3 +55,15 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
