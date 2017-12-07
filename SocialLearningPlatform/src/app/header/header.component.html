@@ -34,7 +34,23 @@
             <li><a href="#">Login with <span class="facebook_btn"><i aria-hidden="true" class="fa fa-facebook-official"></i> Facebook</span></a></li>
           </ul>
         </li>
-        <li><a href="#" (click)="openModal(template)">Sign Up</a></li>
+        <li class="dropdown" dropdown>
+          <a href="#" dropdownToggle class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up <span class="caret"></span></a>
+
+          <div class="dropdown-menu" style="padding: 15px;">
+            <p style="font-size: 15px;">You are Sign in as</p>
+            <div class="radio"><label>
+              <input id="inlineRadio1" name="userIsStudentOrInstructor" type="radio" value="option1"> Student
+            </label></div>
+            <div class="radio">
+              <label>
+                <input id="inlineRadio2" name="userIsStudentOrInstructor" type="radio" value="option2"> Instructor
+              </label></div>
+            <p style="margin: 14px 0px 10px;">------ AND ------</p>
+            <span class="facebook_btn" style="font-size: 17px;"><i aria-hidden="true" class="fa fa-facebook-official"></i> Facebook</span>
+          </div>
+        </li>
+       <!-- <li><a href="#" (click)="openModal(template)">Sign Up</a></li>-->
 
         <li class="dropdown xs_sm_visible loginuserdropdown" style="min-height: 50px;" dropdown >
           <a dropdownToggle href="javascript:void(0)" class="dropdown-toggle" style="padding: 3px 15px 2px 7px !important;" role="button" data-toggle="dropdown" id="user_info" aria-haspopup="true" aria-expanded="false">
@@ -56,14 +72,30 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<ng-template #template>
+<!--<ng-template #template>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
+    <h4 class="modal-title pull-left">  <a class="navbar-brand" href="#" style="padding: 10px 0px 0px;height: auto;"> <i class="fa fa-graduation-cap"></i> Social Learning Platform </a></h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
-    This is a modal.
+  <div class="modal-body text-center">
+    <div class="modal-body">
+      <p style="
+    font-size: 18px;
+">You are Sign in as</p>
+      <label class="radio-inline">
+        <input id="inlineRadio1" name="userIsStudentOrInstructor" type="radio" value="option1"> Student
+      </label>
+      <label class="radio-inline">
+        <input id="inlineRadio2" name="userIsStudentOrInstructor" type="radio" value="option2"> Instructor
+      </label>
+      <p style="
+    margin: 14px 0px 10px;
+">---------- AND ----------</p>
+      <div class="" style="font-size: 20px;">
+        Sign up with <span class="facebook_btn"><i aria-hidden="true" class="fa fa-facebook-official"></i> Facebook</span>
+      </div>
+    </div>
   </div>
-</ng-template>
+</ng-template>-->

@@ -98,4 +98,11 @@
 
 .carousel-control.left{background-image: none}
 .carousel-control.right{background-image: none}
+.search-result-main-div{background-color: #f5faff;padding: 30px 0px; margin:0px }
 
+.nav-pills>li.active>a, .nav-pills>li>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{margin-right: 20px;margin-bottom: 20px}
+.tab-content>.active{box-shadow: 0px 15px 4px -8px rgba(0,0,0,.2);background-color: #FFF;padding: 20px;margin-bottom:25px}
+
+.form-control{    border: 1px solid rgb(230,231,232);
+  color: rgb(157,159,160) !important;
+  box-shadow: none;}
