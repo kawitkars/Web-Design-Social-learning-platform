@@ -13,11 +13,9 @@ export class SortComponent implements OnInit {
   ) {}
 
   test(){
-
     this.sortService.getAllLinks().subscribe(data =>{
-      console.log(data);
+      
     });
-
   }
 
   ngOnInit() {
