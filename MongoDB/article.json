@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5a26dfdb765050764fc23753"},"title":"Introduction to MATLAB","tags":["MATLAB","Computer"],"author":"C","content":"Introduction to MATLAB .","type":"lecture","date":"2017/11/03","url":"https://en.wikipedia.org/wiki/MATLAB"}
+{"_id":{"$oid":"5a26dff2765050764fc2375f"},"title":"Introduction of Canvas","tags":["Canvas","Art"],"author":"C","content":"Introduction of Canvas .","type":"lecture","date":"2017/10/21","url":"https://en.wikipedia.org/wiki/Canvas"}
+{"_id":{"$oid":"5a26e001765050764fc23761"},"title":"Introduction of DNA","tags":["DNA","Science"],"author":"E","content":"Introduction of DNA .","type":"lecture","date":"2014/11/21","url":"https://en.wikipedia.org/wiki/DNA"}
+{"_id":{"$oid":"5a26fbeddd84176e36fef02f"},"title":"Analyze data with MATLAB","tags":["MATLAB","Computer"],"author":"R","content":"Analyze data with MATLAB .","type":"lecture","date":"2014/06/21","url":"https://www.mathworks.com/discovery/matlab-excel.html"}
