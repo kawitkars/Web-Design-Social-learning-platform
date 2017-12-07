@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar-default{
+  background-color: #ffffff !important;
+  border: none;
+  padding: 5px 0px 0px;
+  font-weight: 700;
+  margin: 0px 0px 5px;
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand{
+  color: #6ca4e8;
+  font-weight: 700;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  background-color: #ffffff;
+  color: #787976;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+  background-color: #ffffff;
+  color: #6ca4e8;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+  background-color: #ffffff;
+  color: #787976;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+  background-color: #ffffff;
+  color: #787976;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-top: 6px dashed;
+  border-top: 4px solid\9;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  margin-top: -3px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 0px;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-clip: padding-box;
+  background-color: #f3f3f3;
+  border: none !important;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #787976c2; }
+
+.dropdown-menu>li>a {
+  display: block;
+  padding: 10px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #787976;
+  white-space: nowrap;
+}
+.facebook_btn{
+  color: #4267b2 !important;
+  padding-left: 5px;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover .facebook_btn{color: #fff !important;}
+.padding-0{padding: 0px;}
+.body-style{font-family: 'Nunito Sans', sans-serif;}
+.first_div_h1 {
+  font-size: 50px;
+  text-align: center;
+  color: #fff;
+  font-weight: 200;
+}
+.first_div {
+  margin: 10% 0px;
+  padding: 10% 20px;
+  background-color: #30303078;
+}
+
+.carousel-control.left{background-image: none}
+.carousel-control.right{background-image: none}
+
