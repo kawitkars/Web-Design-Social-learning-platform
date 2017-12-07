@@ -4,17 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {SortService} from './services/sort.service';
+import { SortComponent } from './sort/sort.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SortComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [SortService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
