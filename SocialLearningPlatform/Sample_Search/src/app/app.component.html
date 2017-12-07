@@ -1,0 +1,10 @@
+<div>
+  <h3> {{title}}</h3>
+  <input type="text" [(ngModel)]="queryString" id="search" placeholder="Search to type">
+
+  <ul>
+    <li *ngFor="let n of list | FilterPipeTrial: queryString : searchableList">
+      {{n.coursename}} ({{n.Author}})
+    </li>
+  </ul>
+</div>
