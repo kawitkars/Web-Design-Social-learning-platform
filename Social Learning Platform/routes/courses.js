@@ -15,10 +15,12 @@ router.get('/', function (req, res, next) {
                     error: err
                 });
             }
+            //console.log(courses.user.firstName);
             res.status(200).json({
                 message: 'Success',
-                obj: courses
+                obj: courses,
             });
+            //console.log(courses.user.lastName);
         });
 });
 
@@ -48,7 +50,7 @@ router.post('/', function (req, res, next) {
             instructorName: req.body.instructorName,
             description: req.body.description,
             imagePath: req.body.imagePath,
-            user: user._id
+            user: user
         });
         course.save(function (err, result) {
             if (err) {

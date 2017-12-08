@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Course} from '../course.model';
 import {CourseService} from '../course.service';
-
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-course-detail',
@@ -12,10 +12,11 @@ import {CourseService} from '../course.service';
 export class CourseDetailComponent implements OnInit {
   course: Course;
   id: number;
+  private photo: SafeStyle;
 
   constructor( private courseService: CourseService,
                private route: ActivatedRoute,
-               private router: Router) { }
+               private router: Router, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.route.params
@@ -25,6 +26,7 @@ export class CourseDetailComponent implements OnInit {
           this.course = this.courseService.getCourse(this.id);
         }
       );
+      this.photo = '/assets/image/articles.jpeg';
   }
 
 }

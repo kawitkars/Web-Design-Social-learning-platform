@@ -35,6 +35,7 @@ export class CourseService {
                     result.obj._id,
                     result.obj.user._id);
                 this.courses.push(course);
+                console.log(result.obj.user.firstName);
                 return course;
             })
             .catch((error: Response) => Observable.throw(error.json()));
@@ -55,6 +56,7 @@ export class CourseService {
                       course._id,
                       course.user._id)
                   );
+                  console.log(response.json().obj);
               }
               this.courses = transformedCourses;
               return transformedCourses;

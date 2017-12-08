@@ -1,5 +1,5 @@
 {
-  "name": "udemy-nodejs-angular2",
+  "name": "Social-Learning-Platform",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -30,7 +30,7 @@
     "express": "~4.14.0",
     "hbs": "~3.1.0",
     "jsonwebtoken": "^8.1.0",
-    "mongoose": "^4.13.6",
+    "mongoose": "^4.7.9",
     "mongoose-unique-validator": "^1.0.6",
     "morgan": "~1.6.1",
     "ngx-bootstrap": "^2.0.0-beta.9",

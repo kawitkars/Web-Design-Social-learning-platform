@@ -9,6 +9,7 @@ import {User} from './user.model';
 
 @Injectable()
 export class AuthService {
+    token: string;
 
     constructor(private http: Http) {}
 
@@ -26,5 +27,13 @@ export class AuthService {
         return this.http.post('http://localhost:3000/user/signin', body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    logout() {
+        localStorage.clear();
+    }
+
+    isLoggedIn() {
+        return localStorage.getItem('token') !== null;
     }
 }
