@@ -1,24 +1,40 @@
 <nav class="navbar navbar-default">
     <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div routerLinkActive="active" class="navbar-header">
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>-->
             <a class="navbar-brand" [routerLink]="['/homepage']"> <i class="fa fa-graduation-cap"></i> Social Learning Platform </a>
         </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active"><a [routerLink]="['/homepage']">Home <span class="sr-only">(current)</span></a></li>
                 <li class="dropdown" dropdown>
+                    <a href="#" dropdownToggle class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Study Material <span class="caret"></span></a>
+                    <ul class="dropdown-menu" *dropdownMenu>
+                        <li><a href="#">Video</a></li>
+                        <li><a href="#">Articles</a></li>
+                        <li><a href="#">Expert Tips</a></li>
+                    </ul>
+                </li>
                 <li routerLinkActive="active"><a [routerLink]="['/courses']">Courses</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/create-content']">Create Content</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/courses/new']">Become an instructor</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <ng-template [ngIf]="!isLoggedIn()">
-                    <li routerLinkActive="active"><a style="cursor: pointer" (click)="openModal(login)">Login</a></li>
-                    <li routerLinkActive="active"><a style="cursor: pointer" (click)="openModal(signup)">Sign Up</a></li>
-                </ng-template>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/login']"  role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+                </li>
+                <li routerLinkActive="active"><a [routerLink]="['/signUp']">Sign Up</a></li>
 
                 <li class="dropdown xs_sm_visible loginuserdropdown" style="min-height: 50px;" dropdown >
-                    <a *ngIf="isLoggedIn()" dropdownToggle href="javascript:void(0)" class="dropdown-toggle" style="padding: 3px 15px 2px 7px !important;" role="button" data-toggle="dropdown" id="user_info" aria-haspopup="true" aria-expanded="false">
+                    <a dropdownToggle href="javascript:void(0)" class="dropdown-toggle" style="padding: 3px 15px 2px 7px !important;" role="button" data-toggle="dropdown" id="user_info" aria-haspopup="true" aria-expanded="false">
                         <img src="/assets/image/profile_pic.png" class="img-circle col-lg-3 col-md-3 col-sm-3 col-xs-3" style="width:45px;height:45px;border:2px solid #50E3C2;margin-right: 3px;padding: 0px;">
                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 user_name_joined_date" style="padding: 13px 0px 0px;width: auto;font-size: 16px;font-weight: 400;">
                             <p>User name</p>
@@ -27,7 +43,7 @@
                     </a>
                     <ul class="dropdown-menu menu_user_info" aria-labelledby="user_info" *dropdownMenu>
                         <li><a href="#"><i class="fa fa-street-view fa-lg"></i>&nbsp;My Profile</a></li>
-                        <li><a  (click)="onLogout()"><i class="fa fa-sign-out fa-lg"></i>&nbsp;Logout</a></li>
+                        <li><a  href="#"><i class="fa fa-sign-out fa-lg"></i>&nbsp;Logout</a></li>
 
                     </ul>
                 </li>
@@ -36,34 +52,3 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-<ng-template #login>
-    <div class="modal-header">
-        <h4 class="modal-title pull-left">  <a class="navbar-brand"  href="#" style="color: #6ca4e8;font-weight: 700;padding: 10px 0px 0px;height: auto;"> <i class="fa fa-graduation-cap"></i> Social Learning Platform </a></h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <div class="modal-body">
-            <app-login></app-login>
-        </div>
-    </div>
-</ng-template>
-
-
-<ng-template #signup>
-    <div class="modal-header">
-        <h4 class="modal-title pull-left">  <a class="navbar-brand" href="#" style="color: #6ca4e8;font-weight: 700;padding: 10px 0px 0px;height: auto;"> <i class="fa fa-graduation-cap"></i> Social Learning Platform </a></h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <div class="modal-body">
-            <app-signUp></app-signUp>
-        </div>
-    </div>
-</ng-template>
-
-
