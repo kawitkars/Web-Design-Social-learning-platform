@@ -5,20 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <!--<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">-->
-
-  <!--<script src="../../../node_modules/jquery/dist/jquery.js"></script>-->
-  <!--<script src="../../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
-  <script type="text/javascript" src="../../../angular.min.js"></script>
 
 </head>
 <body>
-<script>
-  var app = angular.module('myApp', []);
-  app.controller('myCtrl', function($scope) {
-    $scope.names = ["1", "2", "3"];
-  });
-</script>
+
 
 
 <div class="container">
@@ -34,36 +24,28 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Video
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Article
-              </label>
-            </div>
-            <!--<div ng-app="myApp" ng-controller="myCtrl">-->
-              <!--<select style="width: 60px;">-->
-                <!--<option ng-repeat="x in names">{{x}}</option>-->
-              <!--</select>-->
-            <!--</div>-->
 
-          </ul>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Type<strong class="caret"></strong></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Video</a>
+                </li>
+                <li>
+                  <a href="#">Article</a>
+                </li>
 
-          <ul class="nav navbar-nav" >
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Instructor
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox">Course
-              </label>
-            </div>
+                <li class="divider">
+                </li>
+                <li>
+                  <a href="#">Course</a>
+                </li>
 
+                <li>
+                  <a href="#">Instructor</a>
+                </li>
+              </ul>
+            </li>
           </ul>
 
           <form class="navbar-form navbar-left" role="search">
