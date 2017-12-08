@@ -12,7 +12,7 @@ var userRoutes = require('./routes/user');
 
 
 var app = express();
-mongoose.connect('localhost:27017/social-learning-platform3');
+//mongoose.connect('localhost:27017/social-learning-platform3');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
