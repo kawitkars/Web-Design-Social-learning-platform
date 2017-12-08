@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SortService} from '../services/sort.service';
-
+declare var $:any;
 @Component({
   selector: 'app-sort',
   templateUrl: './sort.component.html',
@@ -21,6 +21,7 @@ export class SortComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }
