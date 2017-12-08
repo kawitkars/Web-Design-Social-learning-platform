@@ -1,46 +1,52 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-
-var appRoutes = require('./routes/app');
-var courseRoutes = require('./routes/courses');
-var userRoutes = require('./routes/user');
+let express = require('express'),
+app = express(),
+port = process.env.PORT || 3000,
+mongoose = require('mongoose'), //created model loading here
+bodyParser = require('body-parser');
+const path = require('path');
+const cors = require('cors');
 
 
-var app = express();
-mongoose.connect('localhost:27017/social-learning-platform3');
+// mongoose instance connection url connection
+mongoose.connect('mongodb://localhost/socialstudy', function(err){
+    if(err){
+        console.log(err);
+    }else {
+        console.log("connected to the database...");
+    }    
+});
+mongoose.Promise = global.Promise;
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+//Adding body parser for handling request and response objects.
+app.use(bodyParser.urlencoded({
+extended: true
+}));
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(express.static(__dirname + '/dist'));
 
-app.use(function (req, res, next) {
+
+app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
     next();
 });
 
-app.use('/course', courseRoutes);
-app.use('/user', userRoutes);
-app.use('/', appRoutes);
+app.use(bodyParser.json());
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    return res.render('index');
+// app.use(express.static(__dirname + '/public'));
+
+var api = require('./application/routes/api')(app,express);
+app.use('/api',api);
+
+// app.get('*',function(req,res){
+//     res.sendFile(__dirname + '/public/app/views/index.html');
+// });
+
+app.get('*',function(req,res){
+    res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
-
-module.exports = app;
+app.listen(port);
+console.log('Stickies RESTful API server started on: ' + port);
