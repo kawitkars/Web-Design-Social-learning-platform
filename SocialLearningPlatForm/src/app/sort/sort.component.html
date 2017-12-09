@@ -31,27 +31,6 @@
               placeholder="No item selected">
               </ng-select>
 
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort By<strong class="caret"></strong></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">Course</a>
-                </li>
-                <li>
-                  <a href="#">Video</a>
-                </li>
-                <li>
-                  <a href="#">Article</a>
-                </li>
-                <li>
-                  <a href="#">Instructor</a>
-                </li>
-                <li class="divider">
-                </li>
-
-
-              </ul>
-            </li> -->
           </ul>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -63,25 +42,6 @@
             <li>
               <a href="#">Back</a>
             </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">Action</a>
-                </li>
-                <li>
-                  <a href="#">Another action</a>
-                </li>
-                <li>
-                  <a href="#">Something else here</a>
-                </li>
-                <li class="divider">
-                </li>
-                <li>
-                  <a href="#">Separated link</a>
-                </li>
-              </ul>
-            </li>
           </ul>
         </div>
 
@@ -90,51 +50,33 @@
   </div>
 
   <div class="row clearfix" *ngFor = "let Link of Links">
-    <div class="col-md-4 column">
-      <h2>
-        Heading
-      </h2>
-      <p>
-        <iframe width="288" height="208"
-                [src]='transform(Link.url)'>
-        </iframe>
-      </p>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
-    </div>
-    <div class="col-md-4 column">
-      <h2>
-        Heading
-      </h2>
-      <p>
-        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      </p>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
-    </div>
-    <div class="col-md-4 column">
-      <h2>
-        Heading
-      </h2>
-      <p>
-        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      </p>
-      <p>
-        <a class="btn" href="#">View details »</a>
-      </p>
+   
+      <div class="col-md-12 row">
+          <h3>{{Link.title}}</h3>
+      </div>
+
+    <div class="row"> 
+
+        <div class="col-md-4 column">
+            <p>
+              <iframe width="300" height="220"
+                      [src]='transform(Link.url)'>
+              </iframe>
+            </p>
+          </div>
+          <div class="col-md-4 column">
+            <p>
+              {{Link.content}}
+            </p>
+            <p>
+              created by: {{Link.author}}
+            </p>
+          </div>
+
     </div>
   </div>
   
 </div>
 </body>
 
-<script type="text/javascript">
-
-  $('.dropdown-menu').on('click', function(e) {
-	var $target = $(e.target);
-	$target.is('li') && $('#text').text($target.text())
-})
-</script>
 </html>

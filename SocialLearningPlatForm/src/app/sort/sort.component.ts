@@ -15,7 +15,7 @@ export class SortComponent implements OnInit {
   Links;
   ss: any[];
   type:string;
-  items:string[] = ["All","Course","Article","Videos"];
+  items:string[] = ["All","Article","Video"];
 
   private value:any = {};
   private _disabledV:string = '0';
@@ -57,9 +57,6 @@ export class SortComponent implements OnInit {
   init(){
 
     this.sortService.getAlllink().subscribe(data =>{
-
-      // console.log(data);
-
       this.Links = data;
 
     });
