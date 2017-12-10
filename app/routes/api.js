@@ -12,7 +12,8 @@ module.exports = function(app,express){
             author:req.body.author,
             content:req.body.content,
             date:req.body.date,
-            url:req.body.url
+            url:req.body.url,
+            courseName: req.body.courseName
 
         });
 

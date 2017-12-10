@@ -34,6 +34,11 @@ let LinkSchema = new Schema({
         type:String,
         required:true,
         index:{unique:true}
+    },
+
+    courseName:{
+        type:String,
+        required: true
     }
 });
 

@@ -32,6 +32,7 @@ import {SortService} from '../app/services/sort.service';
 import { SortComponent } from './sort/sort.component';
 
 import {SelectModule} from 'ng2-select';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import {SelectModule} from 'ng2-select';
         LoginComponent,
         SignUpComponent,
         LogoutComponent,
-        SortComponent
+        SortComponent,
+        SearchComponent
     ],
     imports: [
         BsDropdownModule.forRoot(),

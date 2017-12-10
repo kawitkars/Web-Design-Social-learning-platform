@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input,OnChanges,SimpleChange} from '@angular/core';
 import {SortService} from '../services/sort.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {SelectModule} from 'ng2-select';
@@ -10,7 +10,7 @@ import { Validators } from '@angular/forms/src/validators';
   templateUrl: './sort.component.html',
   styleUrls: ['./sort.component.css']
 })
-export class SortComponent implements OnInit {
+export class SortComponent implements OnChanges {
 
   Links;
   ss: any[];
@@ -21,11 +21,21 @@ export class SortComponent implements OnInit {
   private _disabledV:string = '0';
   private disabled:boolean = false;
 
+  @Input() course:string;
+  @Input() SearchResult:any[];
+
   constructor(
     private sortService: SortService,
     private sanitizer: DomSanitizer,
 
   ) { }
+
+  ngOnChanges(){
+    if(!!this.course||!!this.SearchResult){
+      console.log(this.course);
+      console.log(this.SearchResult);
+    }
+  }
 
   private get disabledV():string {
     return this._disabledV;
@@ -54,13 +64,9 @@ export class SortComponent implements OnInit {
     this.value = value;
   }
 
+
   init(){
-
-    this.sortService.getAlllink().subscribe(data =>{
-      this.Links = data;
-
-    });
-
+      this.Links = this.SearchResult;
   }
 
   transform(url){
@@ -73,13 +79,14 @@ export class SortComponent implements OnInit {
     this.sortService.getAlllink().subscribe(data =>{
         this.ss = new Array();
         if(this.type == "All"){
-          this.ss = data;
+          this.ss = this.SearchResult;
         }else{
-        for(var i=0;i<data.length;i++){
+        for(var i=0;i<this.SearchResult.length;i++){
+            
+            if(this.SearchResult[i].contentType == this.type){
+              this.ss.push(data[i]);
+         }
           
-         if(data[i].contentType == this.type){
-            this.ss.push(data[i]);
-          }
         }
         }
         this.Links = this.ss;
@@ -87,7 +94,9 @@ export class SortComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit() :void{
+
+    console.log(this.course);
   }
 
 }
