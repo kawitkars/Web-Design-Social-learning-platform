@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 
@@ -22,17 +22,6 @@ export class CourseEditComponent implements OnInit {
               private courseService: CourseService,
               private router: Router) { }
 
-  ngOnInit() {
-      this.courseService.courseIsEdit.subscribe(
-          (course: Course) => this.course = course
-      );
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = +params['id'];
-        }
-      );
-  }
 
   onSubmit(form: NgForm) {
       if (this.course) {
@@ -61,5 +50,18 @@ export class CourseEditComponent implements OnInit {
     onClear(form: NgForm) {
         this.course = null;
         form.resetForm();
+    }
+
+    ngOnInit() {
+        this.courseService.courseIsEdit.subscribe(
+            (course: Course) => this.course = course,
+            console.log(this.course)
+        );
+        this.route.params
+            .subscribe(
+                (params: Params) => {
+                    this.id = +params['id'];
+                }
+            );
     }
 }

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 
 import {Course} from './course.model';
+import { ErrorService } from "../errors/error.service";
 
 
 
@@ -14,7 +15,7 @@ export class CourseService {
     private courses: Course[] = [];
     courseIsEdit = new EventEmitter<Course>();
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private errorService: ErrorService) {
     }
 
     addCourse(course: Course) {
@@ -38,7 +39,10 @@ export class CourseService {
                 console.log(result.obj.user.firstName);
                 return course;
             })
-            .catch((error: Response) => Observable.throw(error.json()));
+            .catch((error: Response) => {
+                this.errorService.handleError(error.json());
+                return Observable.throw(error.json());
+            });
     }
 
   getCourses() {
@@ -61,14 +65,22 @@ export class CourseService {
               this.courses = transformedCourses;
               return transformedCourses;
           })
-          .catch((error: Response) => Observable.throw(error.json()));
+          .catch((error: Response) => {
+              this.errorService.handleError(error.json());
+              return Observable.throw(error.json());
+          });
   }
 
-  getCourse(index: number) {
+getCourse(index: number) {
     return this.courses[index];
   }
 
 
+
+    editCourse(course: Course) {
+        this.courseIsEdit.emit(course);
+        console.log(this.courseIsEdit.emit(course));
+    }
 
     updateCourse(course: Course) {
         const body = JSON.stringify(course);
@@ -78,11 +90,10 @@ export class CourseService {
             : '';
         return this.http.patch('http://localhost:3000/course/' + course.courseId + token, body, {headers: headers})
             .map((response: Response) => response.json())
-            .catch((error: Response) => Observable.throw(error.json()));
-    }
-
-    editCourse(course: Course) {
-        this.courseIsEdit.emit(course);
+            .catch((error: Response) => {
+                this.errorService.handleError(error.json());
+                return Observable.throw(error.json());
+            });
     }
 
   deleteCourse(course: Course) {
@@ -92,7 +103,10 @@ export class CourseService {
           : '';
       return this.http.delete('http://localhost:3000/course/' + course.courseId + token)
           .map((response: Response) => response.json())
-          .catch((error: Response) => Observable.throw(error.json()));
+          .catch((error: Response) => {
+              this.errorService.handleError(error.json());
+              return Observable.throw(error.json());
+          });
   }
 
 }

@@ -18,7 +18,7 @@ router.get('/', function (req, res, next) {
             //console.log(courses.user.firstName);
             res.status(200).json({
                 message: 'Success',
-                obj: courses,
+                obj: courses
             });
             //console.log(courses.user.lastName);
         });
