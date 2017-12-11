@@ -18,6 +18,8 @@ export class CourseListComponent implements OnInit {
 
   private courses: Course[];
   subscription: Subscription;
+  search: string;
+  finalCourses = [];
 
   constructor(private courseService: CourseService,
               private router: Router,
@@ -25,11 +27,35 @@ export class CourseListComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.courseService.getCourses()
-          .subscribe(
-              (courses: Course[]) => {
-                  this.courses = courses;
-              }
-          );
+        // this.route.params.subscribe(
+        //     params => {
+        //        this.search = params['search'];
+        //        console.log(this.search); 
+        //     }
+        // )
+
+        this.search = this.route.snapshot.queryParams['search'];
+
+        if(this.search) {
+            console.log('inside search!');
+            this.courseService.getCourses()
+            .subscribe(
+                (courses: Course[]) => {
+                    for(let i=0; i<courses.length; i++) {
+                        if(courses[i].courseName.toUpperCase().indexOf(this.search.toUpperCase()) > -1) {
+                            this.finalCourses.push(courses[i]);
+                        }
+                    }
+                    this.courses = this.finalCourses;
+                }
+            );
+        } else {
+            this.courseService.getCourses()
+            .subscribe(
+                (courses: Course[]) => {
+                    this.courses = courses;
+                }
+            );
+        }      
   }
 }

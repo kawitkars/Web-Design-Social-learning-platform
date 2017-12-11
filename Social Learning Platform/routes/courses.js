@@ -15,16 +15,21 @@ router.get('/', function (req, res, next) {
                     error: err
                 });
             }
-            //console.log(courses.user.firstName);
             res.status(200).json({
                 message: 'Success',
-                obj: courses,
+                obj: courses
             });
-            //console.log(courses.user.lastName);
         });
 });
 
+router.get('/courses', function(req, res) {
+    var courseName = req.query.search;
+    console.log(req.query.search);
+    router.log(courseName);
+});
+
 router.use('/', function (req, res, next) {
+    console.log('testing');
     jwt.verify(req.query.token, 'secret', function (err, decoded) {
         if (err) {
             return res.status(401).json({
@@ -50,7 +55,7 @@ router.post('/', function (req, res, next) {
             instructorName: req.body.instructorName,
             description: req.body.description,
             imagePath: req.body.imagePath,
-            user: user
+            user: user._id
         });
         course.save(function (err, result) {
             if (err) {

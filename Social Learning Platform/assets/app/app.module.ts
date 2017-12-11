@@ -4,8 +4,6 @@ import { HttpModule } from '@angular/http';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { routing } from './app.routing';
 
@@ -44,13 +42,12 @@ import {AuthService} from './auth/auth.service';
         AuthComponent,
         LoginComponent,
         SignUpComponent,
+        CourseService,
         LogoutComponent
     ],
     imports: [
         BsDropdownModule.forRoot(),
         CarouselModule.forRoot(),
-        ModalModule.forRoot(),
-        TabsModule.forRoot(),
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import {CourseService} from './course.service'
+import {Course} from './course.model'
 
 
 
@@ -8,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-
-  constructor() { }
+  searchableList:any;
+  constructor() {
+    this.searchableList = ['courseName','description']
+   }
 
   ngOnInit() {
   }

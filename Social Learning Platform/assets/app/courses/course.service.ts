@@ -1,21 +1,57 @@
 import { Http, Response, Headers } from '@angular/http';
 import { Injectable, EventEmitter } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs';
 
 
 import {Course} from './course.model';
 
+@Pipe({
+    name: 'CourseService',
+})
 
 
 @Injectable()
-export class CourseService {
+export class CourseService implements PipeTransform{
 
     private courses: Course[] = [];
+    
     courseIsEdit = new EventEmitter<Course>();
 
     constructor(private http: Http) {
     }
+
+    getCourseByName(search: any) {
+        console.log(search);
+        return this.http.get('http://localhost:3000/courses/?search='+search)
+            .map((response: Response) => {
+                console.log(response);
+                // return response.json();
+                
+            });
+    }
+    
+    transform(value: any, input: string,searchableList:any) {
+        console.log(input);
+        console.log(value);
+        if (input) {
+            input = input.toLowerCase();
+            return value.filter(function (el: any) {
+                var isTrue = false;
+                for(var k in searchableList ){
+                    if(el[searchableList[k]].toLowerCase().indexOf(input) > -1){
+                    isTrue = true;
+                    }
+                    if(isTrue){
+                    return el
+                    }
+                    }
+            })
+        }
+        return value;
+    }
+    
 
     addCourse(course: Course) {
         const body = JSON.stringify(course);
@@ -35,7 +71,6 @@ export class CourseService {
                     result.obj._id,
                     result.obj.user._id);
                 this.courses.push(course);
-                console.log(result.obj.user.firstName);
                 return course;
             })
             .catch((error: Response) => Observable.throw(error.json()));
@@ -56,7 +91,6 @@ export class CourseService {
                       course._id,
                       course.user._id)
                   );
-                  console.log(response.json().obj);
               }
               this.courses = transformedCourses;
               return transformedCourses;

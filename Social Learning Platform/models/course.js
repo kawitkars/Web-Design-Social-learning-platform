@@ -9,11 +9,11 @@ var schema = new Schema({
     description: {type:String, required: true},
     imagePath: {type:String, required: true},
     user: {type: Schema.Types.ObjectId, ref: 'User'}
-});
+}, {collection:'courses'});
 
 schema.post('remove', function (course) {
     User.findById(course.user, function (err, user) {
-        user.courses.pull(course);
+        user.courses.pull(course._id);
         user.save();
     });
 });
