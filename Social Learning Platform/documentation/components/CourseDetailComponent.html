@@ -107,6 +107,18 @@
                                 <li class="link">
                                     <a href="../components/HomepageComponent.html" >HomepageComponent</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileInputComponent.html" >ProfileInputComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -301,6 +313,18 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/HomepageComponent.html" >HomepageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileInputComponent.html" >ProfileInputComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -803,31 +827,28 @@ export class CourseDetailComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade" id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid bgstyle-first search-result-main-div&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + photo + &#x27;)&#x27;}&quot; style&#x3D;&quot;&quot;&gt;
-  &lt;div style&#x3D;&quot;background-color: #3e3e3ead;color:#fff&quot;&gt;
-    &lt;div class&#x3D;&quot;container&quot; style&#x3D;&quot;padding: 10% 30px&quot;&gt;
-      &lt;h1 style&#x3D;&quot;font-size: 50px&quot;&gt;{{course.courseName}}&lt;/h1&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid bgstyle-first search-result-main-div&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + photo + &#x27;)&#x27;}&quot;&gt;
+  &lt;div class&#x3D;&quot;course-name-div&quot;&gt;
+    &lt;div class&#x3D;&quot;container padding-container&quot;&gt;
+      &lt;h1 class&#x3D;&quot;font-size-50&quot;&gt;{{course.courseName}}&lt;/h1&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class&#x3D;&quot;container-fluid search-result-main-div&quot;&gt;
   &lt;div class&#x3D;&quot;container&quot;&gt;
-    &lt;div class&#x3D;&quot;col-md-12 col-sm-12 col-xs-12 col-lg-12&quot;&gt;
-      &lt;img src&#x3D;&quot;/assets/image/profile_pic.png&quot; class&#x3D;&quot;img-circle col-lg-3 col-md-3 col-sm-3 col-xs-3&quot; style&#x3D;&quot;width:45px;height:45px;border:2px solid #50E3C2;margin-right: 3px;padding: 0px;&quot;&gt;
-      &lt;div class&#x3D;&quot;col-lg-7 col-md-7 col-sm-7 col-xs-7 user_name_joined_date&quot; style&#x3D;&quot;padding: 0px 0px 0px 5px;width: auto;font-size: 16px;font-weight: 400;&quot;&gt;
-        &lt;p&gt; {{course.instructorName}} &lt;span style&#x3D;&quot;display: block;font-size: 12px;color: #787976;&quot;&gt;12-12-2017 12:00:00&lt;/span&gt;&lt;/p&gt;
+    &lt;div class&#x3D;&quot;col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-0&quot;&gt;
+      &lt;img src&#x3D;&quot;/assets/image/profile_pic.png&quot; class&#x3D;&quot;img-circle col-lg-3 col-md-3 col-sm-3 col-xs-3 profile-img&quot;&gt;
+      &lt;div class&#x3D;&quot;col-lg-7 col-md-7 col-sm-7 col-xs-7 user_name_joined_date&quot;&gt;
+        &lt;p&gt; {{course.instructorName}} &lt;!--&lt;span class&#x3D;&quot;date-time&quot;&gt;12-12-2017 12:00:00&lt;/span&gt;&lt;/p&gt;--&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-lg-12 col-sm-12&quot; style&#x3D;&quot;padding: 30px 15px;font-size: 17px;margin: 20px;border-radius: 5px;box-shadow: 0px 15px 4px -8px rgba(0,0,0,.2);background-color: #FFF;&quot;&gt;
-      &lt;p&gt;{{course.description}}&lt;/p&gt;
+    &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-lg-12 col-sm-12 padding-0&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-lg-12 col-sm-12 description-style&quot;&gt;
+        &lt;p&gt;{{course.description}}&lt;/p&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- &lt;img [src]&#x3D;&quot;course.imagePath&quot;
-     alt&#x3D;&quot;{{course.courseName}}&quot;
-     class&#x3D;&quot;img-responsive&quot;
-     style&#x3D;&quot;max-height:100px;&quot;&gt;--&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade" id="c-tree">
@@ -853,8 +874,8 @@ export class CourseDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid bgstyle-first search-result-main-div" [ngStyle]="{\'background-image\': \'url(\' + photo + \')\'}" style="">  <div style="background-color: #3e3e3ead;color:#fff">    <div class="container" style="padding: 10% 30px">      <h1 style="font-size: 50px">{{course.courseName}}</h1>    </div>  </div></div><div class="container-fluid search-result-main-div">  <div class="container">    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">      <img src="/assets/image/profile_pic.png" class="img-circle col-lg-3 col-md-3 col-sm-3 col-xs-3" style="width:45px;height:45px;border:2px solid #50E3C2;margin-right: 3px;padding: 0px;">      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 user_name_joined_date" style="padding: 0px 0px 0px 5px;width: auto;font-size: 16px;font-weight: 400;">        <p> {{course.instructorName}} <span style="display: block;font-size: 12px;color: #787976;">12-12-2017 12:00:00</span></p>      </div>    </div>    <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12" style="padding: 30px 15px;font-size: 17px;margin: 20px;border-radius: 5px;box-shadow: 0px 15px 4px -8px rgba(0,0,0,.2);background-color: #FFF;">      <p>{{course.description}}</p>    </div>  </div></div><!-- <img [src]="course.imagePath"     alt="{{course.courseName}}"     class="img-responsive"     style="max-height:100px;">--></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid bgstyle-first search-result-main-div" [ngStyle]="{\'background-image\': \'url(\' + photo + \')\'}">  <div class="course-name-div">    <div class="container padding-container">      <h1 class="font-size-50">{{course.courseName}}</h1>    </div>  </div></div><div class="container-fluid search-result-main-div">  <div class="container">    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-0">      <img src="/assets/image/profile_pic.png" class="img-circle col-lg-3 col-md-3 col-sm-3 col-xs-3 profile-img">      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 user_name_joined_date">        <p> {{course.instructorName}} <!--<span class="date-time">12-12-2017 12:00:00</span></p>-->      </div>    </div>    <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 padding-0">      <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 description-style">        <p>{{course.description}}</p>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileInputComponent', 'selector': 'app-profile-input'},{'name': 'ProfileListComponent', 'selector': 'app-profile-list'},{'name': 'ProfilesComponent', 'selector': 'app-profiles'}];
     var DIRECTIVES = [{'name': 'DropdownDirective', 'selector': '[appDropdown]'}];
     var ACTUAL_COMPONENT = {'name': 'CourseDetailComponent'};
 </script>

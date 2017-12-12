@@ -107,6 +107,18 @@
                                 <li class="link">
                                     <a href="../components/HomepageComponent.html" >HomepageComponent</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileInputComponent.html" >ProfileInputComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -301,6 +313,18 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/HomepageComponent.html" >HomepageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileInputComponent.html" >ProfileInputComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -797,14 +821,14 @@ export class ErrorComponent implements OnInit {
         &lt;div class&#x3D;&quot;modal-content&quot;&gt;
             &lt;div class&#x3D;&quot;modal-header&quot;&gt;
                 &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;onErrorHandled()&quot;&gt;&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
-                &lt;h4 class&#x3D;&quot;modal-title&quot;&gt;{{ error?.title }}&lt;/h4&gt;
+                &lt;h4 class&#x3D;&quot;modal-title pull-left&quot;&gt;  &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot; style&#x3D;&quot;color: #6ca4e8;font-weight: 700;padding: 10px 0px 0px;height: auto;&quot;&gt; &lt;i class&#x3D;&quot;fa fa-graduation-cap&quot;&gt;&lt;/i&gt; Social Learning Platform &lt;/a&gt;&lt;/h4&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;modal-body&quot;&gt;
-                &lt;p&gt;{{ error?.message }}&lt;/p&gt;
+                &lt;p style&#x3D;&quot;font-size: 20px;font-weight: 700;text-align:center&quot;&gt;{{ error?.message }}&lt;/p&gt;
             &lt;/div&gt;
-            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+           &lt;!-- &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
                 &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-default&quot; (click)&#x3D;&quot;onErrorHandled()&quot;&gt;Close&lt;/button&gt;
-            &lt;/div&gt;
+            &lt;/div&gt;--&gt;
         &lt;/div&gt;&lt;!-- /.modal-content --&gt;
     &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;
 &lt;/div&gt;&lt;!-- /.modal --&gt;</code></pre>
@@ -833,8 +857,8 @@ export class ErrorComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="backdrop" [ngStyle]="{\'display\': display}"></div><div class="modal" tabindex="-1" role="dialog" [ngStyle]="{\'display\': display}">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <button type="button" class="close" aria-label="Close" (click)="onErrorHandled()"><span aria-hidden="true">&times;</span></button>                <h4 class="modal-title">{{ error?.title }}</h4>            </div>            <div class="modal-body">                <p>{{ error?.message }}</p>            </div>            <div class="modal-footer">                <button type="button" class="btn btn-default" (click)="onErrorHandled()">Close</button>            </div>        </div><!-- /.modal-content -->    </div><!-- /.modal-dialog --></div><!-- /.modal --></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'}];
+        var COMPONENT_TEMPLATE = '<div><div class="backdrop" [ngStyle]="{\'display\': display}"></div><div class="modal" tabindex="-1" role="dialog" [ngStyle]="{\'display\': display}">    <div class="modal-dialog" role="document">        <div class="modal-content">            <div class="modal-header">                <button type="button" class="close" aria-label="Close" (click)="onErrorHandled()"><span aria-hidden="true">&times;</span></button>                <h4 class="modal-title pull-left">  <a class="navbar-brand" href="#" style="color: #6ca4e8;font-weight: 700;padding: 10px 0px 0px;height: auto;"> <i class="fa fa-graduation-cap"></i> Social Learning Platform </a></h4>            </div>            <div class="modal-body">                <p style="font-size: 20px;font-weight: 700;text-align:center">{{ error?.message }}</p>            </div>           <!-- <div class="modal-footer">                <button type="button" class="btn btn-default" (click)="onErrorHandled()">Close</button>            </div>-->        </div><!-- /.modal-content -->    </div><!-- /.modal-dialog --></div><!-- /.modal --></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileInputComponent', 'selector': 'app-profile-input'},{'name': 'ProfileListComponent', 'selector': 'app-profile-list'},{'name': 'ProfilesComponent', 'selector': 'app-profiles'}];
     var DIRECTIVES = [{'name': 'DropdownDirective', 'selector': '[appDropdown]'}];
     var ACTUAL_COMPONENT = {'name': 'ErrorComponent'};
 </script>

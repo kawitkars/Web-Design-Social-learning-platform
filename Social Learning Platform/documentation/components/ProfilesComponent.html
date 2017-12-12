@@ -117,7 +117,7 @@
                                     <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
+                                    <a href="../components/ProfilesComponent.html"  data-type="entity-link" class="active" >ProfilesComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -200,7 +200,7 @@
                                 id="xs-miscellaneous-links"
                             >
                                 <li class="link">
-                                  <a href="../miscellaneous/variables.html" data-type="entity-link"  class="active" >Variables</a>
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
                                 </li>
                         </ul>
                     </li>
@@ -324,7 +324,7 @@
                                            <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
+                                           <a href="../components/ProfilesComponent.html"  data-type="entity-link" class="active" >ProfilesComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -407,7 +407,7 @@
                                        id="miscellaneous-links"
                    >
                                        <li class="link">
-                                         <a href="../miscellaneous/variables.html" data-type="entity-link"  class="active" >Variables</a>
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
                                        </li>
                                </ul>
                            </li>
@@ -428,72 +428,157 @@
                    
                    </nav>
                </div>
-               <div class="content miscellaneous-variables">
+               <div class="content component">
                    <div class="content-data">
 
 
 
 
-
-
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li>Miscellaneous - Variables</li>
+  <li>Components</li>
+  <li>ProfilesComponent</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>assets/app/profile/profiles.component.ts</code>
+</p>
+
+
+
+
+
 <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
         <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
             <tr>
-                <td class="col-md-4">
-                    <ul class="index-list">
-                        <li>
-                            <a href="#routing">routing</a>
-                        </li>
-                    </ul>
-                </td>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-profiles</code></td>
             </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;row search-result-main-div&quot;&gt;
+    &lt;app-profile-list&gt;&lt;/app-profile-list&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;row search-result-main-div&quot;&gt;
+    &lt;app-profile-input&gt;&lt;/app-profile-input&gt;
+&lt;/div&gt;
+
+</code></pre></td>
+            </tr>
+
+
+
         </tbody>
     </table>
 </section>
 
-    <h3>assets/app/app.routing.ts</h3>
-    <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="routing"></a>
-                            <span class="name">
-                                <b>
-                                routing
-                                </b>
-                                <a href="#routing"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>routing:     <code></code>
-    </code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>RouterModule.forRoot(APP_ROUTES)</code>
-                            </td>
-                        </tr>
-    
-    
-                </tbody>
-            </table>
-    </section>
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="c-source">
+        <pre class="line-numbers"><code class="language-typescript">import { Component } from &quot;@angular/core&quot;;
+
+@Component({
+    selector: &#x27;app-profiles&#x27;,
+    template: &#x60;
+
+        &lt;div class&#x3D;&quot;row search-result-main-div&quot;&gt;
+            &lt;app-profile-list&gt;&lt;/app-profile-list&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;row search-result-main-div&quot;&gt;
+            &lt;app-profile-input&gt;&lt;/app-profile-input&gt;
+        &lt;/div&gt;
+
+&#x60;
+})
+export class ProfilesComponent {
+
+}</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade" id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row search-result-main-div">    <app-profile-list></app-profile-list></div><div class="row search-result-main-div">    <app-profile-input></app-profile-input></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileInputComponent', 'selector': 'app-profile-input'},{'name': 'ProfileListComponent', 'selector': 'app-profile-list'},{'name': 'ProfilesComponent', 'selector': 'app-profiles'}];
+    var DIRECTIVES = [{'name': 'DropdownDirective', 'selector': '[appDropdown]'}];
+    var ACTUAL_COMPONENT = {'name': 'ProfilesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
 
 
                    </div><div class="search-results">

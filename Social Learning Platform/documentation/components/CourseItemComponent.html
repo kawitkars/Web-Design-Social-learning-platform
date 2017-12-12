@@ -107,6 +107,18 @@
                                 <li class="link">
                                     <a href="../components/HomepageComponent.html" >HomepageComponent</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileInputComponent.html" >ProfileInputComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -301,6 +313,18 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/HomepageComponent.html" >HomepageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileInputComponent.html" >ProfileInputComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -804,28 +828,20 @@ export class CourseItemComponent implements OnInit {
 
         &lt;div class&#x3D;&quot;col-xs-12 col-md-6 col-sm-12 col-lg-4&quot; style&#x3D;&quot;padding: 15px&quot;&gt;
             &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12&quot; style&#x3D;&quot;box-shadow: 0 1px 2px rgba(0,0,0,.25);background-color: #FFF;padding: 0px 0px 20px;margin-bottom:15px;&quot;&gt;
-                &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + photo + &#x27;)&#x27;}&quot; style&#x3D;&quot;background-size: cover;min-height: 150px&quot;&gt;
-
-                &lt;/div&gt;
+                &lt;img src&#x3D;&quot;{{course.imagePath}}&quot; class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0&quot; style&#x3D;&quot;background-size: cover;min-height: 150px&quot;&gt;
                 &lt;div style&#x3D;&quot;background-image: linear-gradient(to top,#fff 0,rgba(0,0,0,.0001) 100%);margin-top: -18px;&quot; class&#x3D;&quot;col-md-12&quot;&gt;&amp;nbsp;&lt;/div&gt;
                 &lt;div class&#x3D;&quot;col-md-12 carousel_block&quot; style&#x3D;&quot;text-align:center;color:#3e3e3e;font-size:19px;font-weight:600;line-height:1.2;padding: 5px 15px;margin-top: -18px;&quot;&gt;
-                    HTML/CSS Learning
+                    {{course.courseName}}
                 &lt;/div&gt;
-                &lt;div style&#x3D;&quot;clear: both;font-size: 12px;color: #787976;padding: 5px 15px 0px;&quot;&gt;{{course.description}}&lt;/div&gt;
-                &lt;div class&#x3D;&quot;tm-institution-programs-list col-md-12 col-xs-12 col-sm-12 col-lg-12&quot; style&#x3D;&quot;padding: 5px 15px 0px;font-size: 13px;clear: both;&quot;&gt;
-                    &lt;a class&#x3D;&quot;small&quot; href&#x3D;&quot;/node/75306&quot;&gt;HTML&lt;/a&gt;
-                    &lt;span class&#x3D;&quot;small text-muted&quot;&gt;|&lt;/span&gt;
-                    &lt;a class&#x3D;&quot;small&quot; href&#x3D;&quot;/node/75311&quot;&gt;CSS&lt;/a&gt;
-                    &lt;span class&#x3D;&quot;small text-muted&quot;&gt;|&lt;/span&gt;
-                    &lt;a class&#x3D;&quot;small&quot; href&#x3D;&quot;/node/75316&quot;&gt;{{course.courseName}}&lt;/a&gt;
-                &lt;/div&gt;
+                &lt;div style&#x3D;&quot;clear: both;font-size: 12px;color: #787976;padding: 5px 15px 0px;&quot;&gt;{{ (course.description.length&gt;80)? (course.description | slice:0:80)+&#x27;..&#x27;:(course.description) }}&lt;/div&gt;
+
                 &lt;div style&#x3D;&quot;color:#6ca4e8;padding: 5px 15px 10px;clear: both&quot;&gt;By &lt;strong&gt;{{course.instructorName}}&lt;/strong&gt;&lt;/div&gt;
-                &lt;hr style&#x3D;&quot;color:#aaa;margin: 0px 15px;border-width: 2px;clear: both;&quot;&gt;
+               &lt;!-- &lt;hr style&#x3D;&quot;color:#aaa;margin: 0px 15px;border-width: 2px;clear: both;&quot;&gt;--&gt;
 
                 &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12&quot; style&#x3D;&quot;padding:0px;&quot;&gt;
-                    &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12&quot; style&#x3D;&quot;padding: 10px 15px;&quot;&gt;
+                   &lt;!-- &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12&quot; style&#x3D;&quot;padding: 10px 15px;&quot;&gt;
                         &lt;i class&#x3D;&quot;fa fa-facebook-official&quot; aria-hidden&#x3D;&quot;true&quot; style&#x3D;&quot;color:rgb(42,95,157);margin: 5px 2px;font-size: 25px;&quot;&gt;&lt;/i&gt;  &lt;i class&#x3D;&quot;fa fa-twitter-square&quot; style&#x3D;&quot;color:rgb(0,194,245);margin: 5px 2px;font-size: 25px;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; &lt;i class&#x3D;&quot;fa fa-linkedin-square&quot; style&#x3D;&quot;color:rgb(1,128,178);margin: 5px 2px;font-size: 25px;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;i class&#x3D;&quot;fa fa-google-plus-square&quot; style&#x3D;&quot;color:rgb(221,120,120);margin: 5px 2px;font-size: 25px;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
-                    &lt;/div&gt;
+                    &lt;/div&gt;--&gt;
                     &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12&quot;&gt;
                         &lt;a style&#x3D;&quot;cursor: pointer;&quot;
                            [routerLink]&#x3D;&quot;[index]&quot;
@@ -863,8 +879,8 @@ export class CourseItemComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div>        <div class="col-xs-12 col-md-6 col-sm-12 col-lg-4" style="padding: 15px">            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="box-shadow: 0 1px 2px rgba(0,0,0,.25);background-color: #FFF;padding: 0px 0px 20px;margin-bottom:15px;">                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" [ngStyle]="{\'background-image\': \'url(\' + photo + \')\'}" style="background-size: cover;min-height: 150px">                </div>                <div style="background-image: linear-gradient(to top,#fff 0,rgba(0,0,0,.0001) 100%);margin-top: -18px;" class="col-md-12">&nbsp;</div>                <div class="col-md-12 carousel_block" style="text-align:center;color:#3e3e3e;font-size:19px;font-weight:600;line-height:1.2;padding: 5px 15px;margin-top: -18px;">                    HTML/CSS Learning                </div>                <div style="clear: both;font-size: 12px;color: #787976;padding: 5px 15px 0px;">{{course.description}}</div>                <div class="tm-institution-programs-list col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding: 5px 15px 0px;font-size: 13px;clear: both;">                    <a class="small" href="/node/75306">HTML</a>                    <span class="small text-muted">|</span>                    <a class="small" href="/node/75311">CSS</a>                    <span class="small text-muted">|</span>                    <a class="small" href="/node/75316">{{course.courseName}}</a>                </div>                <div style="color:#6ca4e8;padding: 5px 15px 10px;clear: both">By <strong>{{course.instructorName}}</strong></div>                <hr style="color:#aaa;margin: 0px 15px;border-width: 2px;clear: both;">                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding:0px;">                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding: 10px 15px;">                        <i class="fa fa-facebook-official" aria-hidden="true" style="color:rgb(42,95,157);margin: 5px 2px;font-size: 25px;"></i>  <i class="fa fa-twitter-square" style="color:rgb(0,194,245);margin: 5px 2px;font-size: 25px;" aria-hidden="true"></i> <i class="fa fa-linkedin-square" style="color:rgb(1,128,178);margin: 5px 2px;font-size: 25px;" aria-hidden="true"></i><i class="fa fa-google-plus-square" style="color:rgb(221,120,120);margin: 5px 2px;font-size: 25px;" aria-hidden="true"></i>                    </div>                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">                        <a style="cursor: pointer;"                           [routerLink]="[index]"                           routerLinkActive="active"                           type="button" style="color: #fff;background-color:rgb(80,227, 194);border-radius: 20px;border: none;font-size: 14px;padding: 8px 15px 8px 15px;" class="btn center-block">View Article</a>                    </div>                </div>            </div>        </div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'}];
+        var COMPONENT_TEMPLATE = '<div>        <div class="col-xs-12 col-md-6 col-sm-12 col-lg-4" style="padding: 15px">            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="box-shadow: 0 1px 2px rgba(0,0,0,.25);background-color: #FFF;padding: 0px 0px 20px;margin-bottom:15px;">                <img src="{{course.imagePath}}" class="col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0" style="background-size: cover;min-height: 150px">                <div style="background-image: linear-gradient(to top,#fff 0,rgba(0,0,0,.0001) 100%);margin-top: -18px;" class="col-md-12">&nbsp;</div>                <div class="col-md-12 carousel_block" style="text-align:center;color:#3e3e3e;font-size:19px;font-weight:600;line-height:1.2;padding: 5px 15px;margin-top: -18px;">                    {{course.courseName}}                </div>                <div style="clear: both;font-size: 12px;color: #787976;padding: 5px 15px 0px;">{{ (course.description.length>80)? (course.description | slice:0:80)+\'..\':(course.description) }}</div>                <div style="color:#6ca4e8;padding: 5px 15px 10px;clear: both">By <strong>{{course.instructorName}}</strong></div>               <!-- <hr style="color:#aaa;margin: 0px 15px;border-width: 2px;clear: both;">-->                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding:0px;">                   <!-- <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding: 10px 15px;">                        <i class="fa fa-facebook-official" aria-hidden="true" style="color:rgb(42,95,157);margin: 5px 2px;font-size: 25px;"></i>  <i class="fa fa-twitter-square" style="color:rgb(0,194,245);margin: 5px 2px;font-size: 25px;" aria-hidden="true"></i> <i class="fa fa-linkedin-square" style="color:rgb(1,128,178);margin: 5px 2px;font-size: 25px;" aria-hidden="true"></i><i class="fa fa-google-plus-square" style="color:rgb(221,120,120);margin: 5px 2px;font-size: 25px;" aria-hidden="true"></i>                    </div>-->                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">                        <a style="cursor: pointer;"                           [routerLink]="[index]"                           routerLinkActive="active"                           type="button" style="color: #fff;background-color:rgb(80,227, 194);border-radius: 20px;border: none;font-size: 14px;padding: 8px 15px 8px 15px;" class="btn center-block">View Article</a>                    </div>                </div>            </div>        </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileInputComponent', 'selector': 'app-profile-input'},{'name': 'ProfileListComponent', 'selector': 'app-profile-list'},{'name': 'ProfilesComponent', 'selector': 'app-profiles'}];
     var DIRECTIVES = [{'name': 'DropdownDirective', 'selector': '[appDropdown]'}];
     var ACTUAL_COMPONENT = {'name': 'CourseItemComponent'};
 </script>

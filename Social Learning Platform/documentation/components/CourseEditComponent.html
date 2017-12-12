@@ -107,6 +107,18 @@
                                 <li class="link">
                                     <a href="../components/HomepageComponent.html" >HomepageComponent</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileInputComponent.html" >ProfileInputComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -301,6 +313,18 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/HomepageComponent.html" >HomepageComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileInputComponent.html" >ProfileInputComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileListComponent.html" >ProfileListComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfilesComponent.html" >ProfilesComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -632,7 +656,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">assets/app/courses/course-edit/course-edit.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">assets/app/courses/course-edit/course-edit.component.ts:55</a></div>
                                 </td>
                             </tr>
     
@@ -669,7 +693,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">assets/app/courses/course-edit/course-edit.component.ts:61</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">assets/app/courses/course-edit/course-edit.component.ts:50</a></div>
                                 </td>
                             </tr>
     
@@ -735,7 +759,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">assets/app/courses/course-edit/course-edit.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">assets/app/courses/course-edit/course-edit.component.ts:26</a></div>
                                 </td>
                             </tr>
     
@@ -894,7 +918,7 @@
 
 
     <div class="tab-pane fade tab-source-code" id="c-source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit, Output } from &#x27;@angular/core&#x27;;
 import { NgForm } from &#x27;@angular/forms&#x27;;
 
 
@@ -918,17 +942,6 @@ export class CourseEditComponent implements OnInit {
               private courseService: CourseService,
               private router: Router) { }
 
-  ngOnInit() {
-      this.courseService.courseIsEdit.subscribe(
-          (course: Course) &#x3D;&gt; this.course &#x3D; course
-      );
-    this.route.params
-      .subscribe(
-        (params: Params) &#x3D;&gt; {
-          this.id &#x3D; +params[&#x27;id&#x27;];
-        }
-      );
-  }
 
   onSubmit(form: NgForm) {
       if (this.course) {
@@ -958,6 +971,19 @@ export class CourseEditComponent implements OnInit {
         this.course &#x3D; null;
         form.resetForm();
     }
+
+    ngOnInit() {
+        this.courseService.courseIsEdit.subscribe(
+            (course: Course) &#x3D;&gt; this.course &#x3D; course,
+            console.log(this.course)
+        );
+        this.route.params
+            .subscribe(
+                (params: Params) &#x3D;&gt; {
+                    this.id &#x3D; +params[&#x27;id&#x27;];
+                }
+            );
+    }
 }
 </code></pre>
     </div>
@@ -965,27 +991,27 @@ export class CourseEditComponent implements OnInit {
     <div class="tab-pane fade" id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid search-result-main-div&quot;&gt;
   &lt;div class&#x3D;&quot;container&quot; style&#x3D;&quot;margin-bottom: 30px&quot;&gt;
-    &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0&quot;&gt;
       &lt;h2 class&#x3D;&quot;how-it-work-heading&quot;&gt;How it works&lt;/h2&gt;
       &lt;div class&#x3D;&quot;col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center&quot;&gt;
-        &lt;img src&#x3D;&quot;/assets/image/search.jpeg&quot; class&#x3D;&quot;img-circle img-responsive center-block&quot; style&#x3D;&quot;width: 100px;height: 100px;&quot; alt&#x3D;&quot;Responsive image&quot;&gt;
-        &lt;p class&#x3D;&quot;hiw-heading&quot;&gt;1. Search your need&lt;/p&gt;
-        &lt;p class&#x3D;&quot;hiw-subheading&quot;&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.&lt;/p&gt;
+        &lt;img src&#x3D;&quot;https://static.pexels.com/photos/167682/pexels-photo-167682.jpeg&quot; class&#x3D;&quot;img-circle img-responsive center-block&quot; style&#x3D;&quot;width: 100px;height: 100px;&quot; alt&#x3D;&quot;Responsive image&quot;&gt;
+        &lt;p class&#x3D;&quot;hiw-heading&quot;&gt;1. Create a course for free&lt;/p&gt;
+        &lt;p class&#x3D;&quot;hiw-subheading&quot;&gt;You can create various articles&lt;/p&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center&quot;&gt;
-        &lt;img src&#x3D;&quot;/assets/image/search.jpeg&quot; class&#x3D;&quot;img-circle img-responsive center-block&quot; style&#x3D;&quot;width: 100px;height: 100px;&quot; alt&#x3D;&quot;Responsive image&quot;&gt;
-        &lt;p class&#x3D;&quot;hiw-heading&quot;&gt;2. Go through all Materials&lt;/p&gt;
-        &lt;p class&#x3D;&quot;hiw-subheading&quot;&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.&lt;/p&gt;
+        &lt;img src&#x3D;&quot;https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1484779568000/photosp/71a0aa94-1185-4552-a9a7-81a071814934/stock-photo-blue-paper-paint-texture-craft-icon-social-media-upload-the-cloud-71a0aa94-1185-4552-a9a7-81a071814934.jpg&quot; class&#x3D;&quot;img-circle img-responsive center-block&quot; style&#x3D;&quot;width: 100px;height: 100px;&quot; alt&#x3D;&quot;Responsive image&quot;&gt;
+        &lt;p class&#x3D;&quot;hiw-heading&quot;&gt;2. Upload your content&lt;/p&gt;
+        &lt;p class&#x3D;&quot;hiw-subheading&quot;&gt;Upload your created content to share with the users&lt;/p&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center&quot;&gt;
-        &lt;img src&#x3D;&quot;/assets/image/search.jpeg&quot; class&#x3D;&quot;img-circle img-responsive center-block&quot; style&#x3D;&quot;width: 100px;height: 100px;&quot; alt&#x3D;&quot;Responsive image&quot;&gt;
-        &lt;p class&#x3D;&quot;hiw-heading&quot;&gt;3. Provide feedback about material&lt;/p&gt;
-        &lt;p class&#x3D;&quot;hiw-subheading&quot;&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.&lt;/p&gt;
+        &lt;img src&#x3D;&quot;https://static.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg&quot; class&#x3D;&quot;img-circle img-responsive center-block&quot; style&#x3D;&quot;width: 100px;height: 100px;&quot; alt&#x3D;&quot;Responsive image&quot;&gt;
+        &lt;p class&#x3D;&quot;hiw-heading&quot;&gt;3. Share knowledge with Students&lt;/p&gt;
+        &lt;p class&#x3D;&quot;hiw-subheading&quot;&gt;Share your knowledge with whole community&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;container&quot;&gt;
-    &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12 zero_padding&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0&quot;&gt;
       &lt;tabset type&#x3D;&quot;pills&quot;&gt;
         &lt;tab&gt;
           &lt;form class&#x3D;&quot;form-horizontal&quot; (ngSubmit)&#x3D;&quot;onSubmit(f)&quot; #f&#x3D;&quot;ngForm&quot;&gt;
@@ -1092,8 +1118,8 @@ export class CourseEditComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid search-result-main-div">  <div class="container" style="margin-bottom: 30px">    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">      <h2 class="how-it-work-heading">How it works</h2>      <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">        <img src="/assets/image/search.jpeg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">        <p class="hiw-heading">1. Search your need</p>        <p class="hiw-subheading">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>      </div>      <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">        <img src="/assets/image/search.jpeg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">        <p class="hiw-heading">2. Go through all Materials</p>        <p class="hiw-subheading">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>      </div>      <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">        <img src="/assets/image/search.jpeg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">        <p class="hiw-heading">3. Provide feedback about material</p>        <p class="hiw-subheading">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>      </div>    </div>  </div>  <div class="container">    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 zero_padding">      <tabset type="pills">        <tab>          <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">            <p class="text-center" style="font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">Create New Article</p>            <div class="form-group">              <label for="courseName" class="col-sm-2 control-label">Title</label>              <div class="col-sm-10">                <input type="text" id="courseName" class="form-control" [ngModel]="course?.courseName" name="courseName" required  placeholder="Article Title">              </div>            </div>            <div class="form-group">              <label for="instructorName" class="col-sm-2 control-label">Instructor Name</label>              <div class="col-sm-10">                <input type="text" id="instructorName" class="form-control" [ngModel]="course?.instructorName" name="instructorName" required placeholder="Instructor Name">              </div>            </div>            <div class="form-group">              <label for="description" class="col-sm-2 control-label">Description</label>              <div class="col-sm-10">                <textarea class="form-control" id="description" rows="3" [ngModel]="course?.description" name="description" required placeholder="Article Description"></textarea>              </div>            </div>            <div class="form-group">              <label for="imagePath" class="col-sm-2 control-label">Image Link</label>              <div class="col-sm-10">                <input type="text" class="form-control" id="imagePath" placeholder="Image URL" type="text" [ngModel]="course?.imagePath" name="imagePath" required>              </div>            </div>            <div class="form-group">              <div class="col-sm-offset-2 col-sm-10">                <button type="button" class="btn btn-info commonBtnStyle" (click)="onClear(f)">Clear</button>&nbsp;&nbsp;                <button type="submit" class="btn btn-default commonBtn" style="">Create Article</button>              </div>            </div>          </form>        </tab>        <!--<tab heading="Upload Video">          <form class="form-horizontal">            <p class="text-center" style="font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">Upload Video</p>            <div class="form-group">              <label for="inputVideoTitle" class="col-sm-2 control-label">Title</label>              <div class="col-sm-10">                <input type="text" class="form-control" id="inputVideoTitle" placeholder="title">              </div>            </div>            <div class="form-group">              <label for="inputVideoShortDescription" class="col-sm-2 control-label">Short Description</label>              <div class="col-sm-10">                <input type="text" class="form-control" id="inputVideoShortDescription" placeholder="Short Description">              </div>            </div>            <div class="form-group">              <label for="inputVideoContent" class="col-sm-2 control-label">Content</label>              <div class="col-sm-10">                <textarea class="form-control" id="inputVideoContent" rows="3"></textarea>              </div>            </div>            <div class="form-group">              <label for="inputVideoTags" class="col-sm-2 control-label">Tags</label>              <div class="col-sm-10">                <input type="text" class="form-control" id="inputVideoTags" placeholder="Tags">              </div>            </div>            <div class="form-group">              <div class="col-sm-offset-2 col-sm-10">                <button type="submit" class="btn btn-default" style="color: #fff;background-color:rgb(80,227, 194);border-radius: 20px;border: none;font-size: 14px;padding: 8px 15px 8px 15px;">Create Article</button>              </div>            </div>          </form>        </tab>-->      </tabset>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid search-result-main-div">  <div class="container" style="margin-bottom: 30px">    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0">      <h2 class="how-it-work-heading">How it works</h2>      <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">        <img src="https://static.pexels.com/photos/167682/pexels-photo-167682.jpeg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">        <p class="hiw-heading">1. Create a course for free</p>        <p class="hiw-subheading">You can create various articles</p>      </div>      <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">        <img src="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1484779568000/photosp/71a0aa94-1185-4552-a9a7-81a071814934/stock-photo-blue-paper-paint-texture-craft-icon-social-media-upload-the-cloud-71a0aa94-1185-4552-a9a7-81a071814934.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">        <p class="hiw-heading">2. Upload your content</p>        <p class="hiw-subheading">Upload your created content to share with the users</p>      </div>      <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">        <img src="https://static.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">        <p class="hiw-heading">3. Share knowledge with Students</p>        <p class="hiw-subheading">Share your knowledge with whole community</p>      </div>    </div>  </div>  <div class="container">    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0">      <tabset type="pills">        <tab>          <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">            <p class="text-center" style="font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">Create New Article</p>            <div class="form-group">              <label for="courseName" class="col-sm-2 control-label">Title</label>              <div class="col-sm-10">                <input type="text" id="courseName" class="form-control" [ngModel]="course?.courseName" name="courseName" required  placeholder="Article Title">              </div>            </div>            <div class="form-group">              <label for="instructorName" class="col-sm-2 control-label">Instructor Name</label>              <div class="col-sm-10">                <input type="text" id="instructorName" class="form-control" [ngModel]="course?.instructorName" name="instructorName" required placeholder="Instructor Name">              </div>            </div>            <div class="form-group">              <label for="description" class="col-sm-2 control-label">Description</label>              <div class="col-sm-10">                <textarea class="form-control" id="description" rows="3" [ngModel]="course?.description" name="description" required placeholder="Article Description"></textarea>              </div>            </div>            <div class="form-group">              <label for="imagePath" class="col-sm-2 control-label">Image Link</label>              <div class="col-sm-10">                <input type="text" class="form-control" id="imagePath" placeholder="Image URL" type="text" [ngModel]="course?.imagePath" name="imagePath" required>              </div>            </div>            <div class="form-group">              <div class="col-sm-offset-2 col-sm-10">                <button type="button" class="btn btn-info commonBtnStyle" (click)="onClear(f)">Clear</button>&nbsp;&nbsp;                <button type="submit" class="btn btn-default commonBtn" style="">Create Article</button>              </div>            </div>          </form>        </tab>        <!--<tab heading="Upload Video">          <form class="form-horizontal">            <p class="text-center" style="font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">Upload Video</p>            <div class="form-group">              <label for="inputVideoTitle" class="col-sm-2 control-label">Title</label>              <div class="col-sm-10">                <input type="text" class="form-control" id="inputVideoTitle" placeholder="title">              </div>            </div>            <div class="form-group">              <label for="inputVideoShortDescription" class="col-sm-2 control-label">Short Description</label>              <div class="col-sm-10">                <input type="text" class="form-control" id="inputVideoShortDescription" placeholder="Short Description">              </div>            </div>            <div class="form-group">              <label for="inputVideoContent" class="col-sm-2 control-label">Content</label>              <div class="col-sm-10">                <textarea class="form-control" id="inputVideoContent" rows="3"></textarea>              </div>            </div>            <div class="form-group">              <label for="inputVideoTags" class="col-sm-2 control-label">Tags</label>              <div class="col-sm-10">                <input type="text" class="form-control" id="inputVideoTags" placeholder="Tags">              </div>            </div>            <div class="form-group">              <div class="col-sm-offset-2 col-sm-10">                <button type="submit" class="btn btn-default" style="color: #fff;background-color:rgb(80,227, 194);border-radius: 20px;border: none;font-size: 14px;padding: 8px 15px 8px 15px;">Create Article</button>              </div>            </div>          </form>        </tab>-->      </tabset>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CourseDetailComponent', 'selector': 'app-course-detail'},{'name': 'CourseEditComponent', 'selector': 'app-course-edit'},{'name': 'CourseItemComponent', 'selector': 'app-course-item'},{'name': 'CourseListComponent', 'selector': 'app-course-list'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileInputComponent', 'selector': 'app-profile-input'},{'name': 'ProfileListComponent', 'selector': 'app-profile-list'},{'name': 'ProfilesComponent', 'selector': 'app-profiles'}];
     var DIRECTIVES = [{'name': 'DropdownDirective', 'selector': '[appDropdown]'}];
     var ACTUAL_COMPONENT = {'name': 'CourseEditComponent'};
 </script>

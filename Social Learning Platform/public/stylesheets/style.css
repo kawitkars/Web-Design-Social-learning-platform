@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar-brand{
+  padding: 15px 10px; }
+
 .navbar-default .navbar-nav .open a {
   background-color: #ffffff;
   font-weight: 400; }
