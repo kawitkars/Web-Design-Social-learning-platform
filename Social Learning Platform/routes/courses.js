@@ -18,10 +18,16 @@ router.get('/', function (req, res, next) {
             //console.log(courses.user.firstName);
             res.status(200).json({
                 message: 'Success',
-                obj: courses,
+                obj: courses
             });
             //console.log(courses.user.lastName);
         });
+});
+
+router.get('/courses', function(req, res) {
+    var courseName = req.query.search;
+    console.log(req.query.search);
+    router.log(courseName);
 });
 
 router.use('/', function (req, res, next) {

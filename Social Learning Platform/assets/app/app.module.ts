@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
@@ -18,9 +19,9 @@ import { CourseItemComponent } from './courses/course-list/course-item/course-it
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { CourseEditComponent } from './courses/course-edit/course-edit.component';
 import { AuthComponent} from './auth/auth.component';
-import { LoginComponent } from './auth/login/login.component';
-import { SignUpComponent } from './auth/signUp/signUp.component';
-import { LogoutComponent } from './auth/logout/logout.component';
+import { ErrorComponent } from "./errors/error.component";
+import { ErrorService } from "./errors/error.service";
+import { ProfileComponent } from "./profile/profile.component"
 
 import {DropdownDirective} from './Shared/dropdown.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -28,6 +29,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {CourseService} from './courses/course.service';
 import {AuthService} from './auth/auth.service';
+import { ProfileListComponent} from "./profile/profile-list.component";
+import { ProfileInputComponent } from "./profile/profile-input.component";
+import {ProfilesComponent} from "./profile/profiles.component";
 
 
 @NgModule({
@@ -42,9 +46,11 @@ import {AuthService} from './auth/auth.service';
         CourseEditComponent,
         DropdownDirective,
         AuthComponent,
-        LoginComponent,
-        SignUpComponent,
-        LogoutComponent
+        ErrorComponent,
+        ProfileComponent,
+        ProfileListComponent,
+        ProfileInputComponent,
+        ProfilesComponent
     ],
     imports: [
         BsDropdownModule.forRoot(),
@@ -52,12 +58,13 @@ import {AuthService} from './auth/auth.service';
         ModalModule.forRoot(),
         TabsModule.forRoot(),
         BrowserModule,
+        CommonModule,
         FormsModule,
         ReactiveFormsModule,
         routing,
         HttpModule
     ],
-    providers: [CourseService, AuthService],
+    providers: [CourseService, AuthService, ErrorService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,6 +1,6 @@
 
 <div class="container-fluid search-result-main-div">
-  <div class="container">
+  <div class="container padding-0">
     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 zero_padding">
       <div class="col-md-4 col-lg-3 col-sm-5 col-xs-12 padding_three_block">
         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 small_blocks_rl">
@@ -31,19 +31,6 @@
               </ul>
             </div>
 
-            <!--<div class="dropdown" style="margin-bottom:30px">
-              <button class="btn filter_dropdown tuition_fee_dropdown" id="tuition_fee" value="" type="button" data-toggle="dropdown" aria-expanded="true">
-                Tuition Fees
-                <span class="caret caret_style"></span>
-              </button>
-              <ul class="dropdown-menu filter_dropdown_menu dropdown_menu_tuition_fee" id="list_tuition_fee" role="menu" aria-labelledby="tuition_fee">
-                <li class="li_tuition_fee" value="less_than_20000_USD" name="less than 20000 USD"><a href="#" value="less_than_20000_USD"> less than 20000 USD </a></li>
-                <li class="li_tuition_fee" value="20000_30000_USD" name="20000 - 30000 USD"><a href="#" value="20000_30000_USD">20000 - 30000 USD</a></li>
-                <li class="li_tuition_fee" value="30000_40000_USD" name="30000 - 40000 USD"><a href="#" value="30000_40000_USD">30000 - 40000 USD</a></li>
-                <li class="li_tuition_fee" value="40000_50000_USD" name="40000 - 50000 USD"><a href="#" value="40000_50000_USD">40000 - 50000 USD</a></li>
-              </ul>
-            </div>-->
-
             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="padding:0px;margin-bottom:30px">
               <button type="button" onclick="update_search_results();" style="color: #fff;background-color:rgb(80,227, 194);border-radius: 20px;border: none;font-size: 14px;padding: 8px 15px 8px 15px;" class="btn center-block">Update search Result</button>
               <p style="float:right;font-size:12px;cursor:pointer;color:#337ab7;margin:0px" onclick="reset_filter();">Reset</p>
@@ -59,13 +46,13 @@
 
           <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12"  style="padding:20px 15px 20px">
 
-            <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9" id="tags_block" style="padding:0px 15px">
+          <!--  <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9" id="tags_block" style="padding:0px 15px">
               <span class="filter_tags">Anish<i onclick="filter_close_btn(this);"class="glyphicon glyphicon-remove-circle  close_filter_tags"></i></span>
               <span class="filter_tags">Video<i onclick="filter_close_btn(this);" class="glyphicon glyphicon-remove-circle  close_filter_tags"></i></span>
               <span class="filter_tags">HTML<i onclick="filter_close_btn(this);" class="glyphicon glyphicon-remove-circle  close_filter_tags"></i></span>
-            </div>
+            </div>-->
 
-            <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3" style="padding:0px 15px;">
+           <!-- <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3" style="padding:0px 15px;">
               <div class="dropdown" dropdown>
                 <button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #aaa;border-radius: 15px;text-align: left;font-weight: 400;width: 100%;background-color: #fff;height: 35px;">
                   Filter <span class="glyphicon glyphicon-filter" style="float: right;"></span>
@@ -77,13 +64,14 @@
                   <li><a href="#">Separated link</a></li>
                 </ul>
               </div>
-            </div>
+            </div>-->
           </div>
           <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" id="stamp_block">
     <app-course-item *ngFor="let courseEl of courses; let i = index"
                      [course]="courseEl"
                      [index]="i">
     </app-course-item>
+            <p style="font-size: 20px;color:#787976;font-weight: 700;padding: 10px 30px;margin: 0px 0px 30px;text-align:  center;"  *ngIf="isNull == true">No courses found</p>
           </div>
           <div class="loader" style="display:none">
           <img src="/assets/image/loader.gif" class="center-block">
