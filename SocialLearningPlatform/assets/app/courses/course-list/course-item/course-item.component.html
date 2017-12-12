@@ -7,7 +7,7 @@
         <div class="col-md-12 carousel_block" style="text-align:center;color:#3e3e3e;font-size:19px;font-weight:600;line-height:1.2;padding: 5px 15px;margin-top: -18px;">
             HTML/CSS Learning
         </div>
-        <div style="clear: both;font-size: 12px;color: #787976;padding: 5px 15px 0px;">{{course.description}}</div>
+        <div style="clear: both;font-size: 12px;color: #787976;padding: 5px 15px 0px;">{{ (course.description.length>30)? (course.description | slice:0:6)+'..':(course.description) }}</div>
         <div class="tm-institution-programs-list col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding: 5px 15px 0px;font-size: 13px;clear: both;">
             <a class="small" href="/node/75306">HTML</a>
             <span class="small text-muted">|</span>
