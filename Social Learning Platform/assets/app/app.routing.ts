@@ -13,6 +13,7 @@ const APP_ROUTES: Routes = [
     { path: 'create-content', component: CourseEditComponent, pathMatch: 'full' },
     { path: 'courses/:id', component: CourseDetailComponent,pathMatch: 'full'},
     {path: 'profile', component: ProfilesComponent,pathMatch: 'full'},
+    {path: 'profile/:id', component: CourseDetailComponent,pathMatch: 'full'},
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

@@ -45,6 +45,16 @@ export class CourseService {
             });
     }
 
+    getCourseByName(search: any) {
+        console.log(search);
+        return this.http.get('http://localhost:3000/courses/?search='+search)
+            .map((response: Response) => {
+                console.log(response);
+                // return response.json();
+
+            });
+    }
+
   getCourses() {
       return this.http.get('http://localhost:3000/course')
           .map((response: Response) => {

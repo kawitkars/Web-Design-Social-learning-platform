@@ -34,6 +34,7 @@ router.post('/signin', function (req, res, next) {
                 error: err
             });
         }
+
         if(!user) {
             return res.status(401).json({
                 title: 'Login failed',

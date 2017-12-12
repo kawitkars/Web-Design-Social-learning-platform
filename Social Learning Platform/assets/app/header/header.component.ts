@@ -17,8 +17,9 @@ import {User} from "../auth/user.model";
     templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit{
-
+    isIn : boolean = false;   // store state
     modalRef: BsModalRef;
+    modalRef2: BsModalRef
 
     myForm1: FormGroup;
 
@@ -27,7 +28,17 @@ export class HeaderComponent implements OnInit{
     isSignUp : boolean = false;
 
     openModal(template: TemplateRef<any>) {
+        let bool = this.isIn;
+        this.isIn = bool === false ? true : false;
         this.modalRef = this.modalService.show(template);
+        this.closeFirstModal();
+
+    }
+
+    openModal2(template: TemplateRef<any>) {
+        let bool = this.isIn;
+        this.isIn = bool === false ? true : false;
+        this.modalRef2 = this.modalService.show(template);
     }
 
     @Input() course: Course;
@@ -72,6 +83,8 @@ export class HeaderComponent implements OnInit{
                 error => console.error(error)
             );
         this.myForm2.reset();
+
+
     }
 
     ngOnInit() {
@@ -92,6 +105,17 @@ export class HeaderComponent implements OnInit{
             ]),
             password: new FormControl(null, Validators.required)
         });
+    }
+
+    closeFirstModal() {
+       // console.log("inside close first modal");
+        this.modalRef2.hide();
+       // this.modalRef2 = null;
+    }
+
+    toggleState() { // click handler
+        let bool = this.isIn;
+        this.isIn = bool === false ? true : false;
     }
 
 }

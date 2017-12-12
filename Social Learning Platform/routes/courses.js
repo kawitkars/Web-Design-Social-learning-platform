@@ -24,6 +24,12 @@ router.get('/', function (req, res, next) {
         });
 });
 
+router.get('/courses', function(req, res) {
+    var courseName = req.query.search;
+    console.log(req.query.search);
+    router.log(courseName);
+});
+
 router.use('/', function (req, res, next) {
     jwt.verify(req.query.token, 'secret', function (err, decoded) {
         if (err) {

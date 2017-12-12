@@ -4,11 +4,11 @@ import { Component } from "@angular/core";
     selector: 'app-profiles',
     template: `
 
-        <div class="row">
+        <div class="row search-result-main-div">
             <app-profile-list></app-profile-list>
         </div>
-        <hr>
-        <div class="row">
+
+        <div class="row search-result-main-div">
             <app-profile-input></app-profile-input>
         </div>
 

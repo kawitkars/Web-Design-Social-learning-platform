@@ -12,7 +12,7 @@ import { CourseService } from "../courses/course.service";
 export class ProfileComponent {
 
     @Input() course: Course;
-
+    @Input() index: number;
     constructor(private courseService: CourseService) {}
 
     onEditArticle() {
